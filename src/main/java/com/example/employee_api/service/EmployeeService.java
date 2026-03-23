@@ -21,5 +21,15 @@ public class EmployeeService {
                 .build();
     }
 
+    public EmployeeResponseDto createEmployee(EmployeeRequestDto requestDto){
+        if(employeeRepository.existsByEmail(requestDto.getEmail())){
+            throw new IllegalArgumentException("Email already exists: "+ requestDto.getEmail());
+        }
+
+        Employee employee = Employee.builder().name(requestDto.getName()).email(requestDto.getEmail()).department(requestDto.getDepartment()).salary(requestDto.getSalary()).build();
+        Employee saved = employeeRepository.save(employee);
+        return toResponseDto(saved);
+    }
+
 
 }
