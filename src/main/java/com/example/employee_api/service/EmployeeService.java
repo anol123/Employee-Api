@@ -21,6 +21,7 @@ public class EmployeeService {
                 .build();
     }
 
+    //create
     public EmployeeResponseDto createEmployee(EmployeeRequestDto requestDto){
         if(employeeRepository.existsByEmail(requestDto.getEmail())){
             throw new IllegalArgumentException("Email already exists: "+ requestDto.getEmail());
