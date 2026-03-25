@@ -11,6 +11,7 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+    // Handles your custom NotFoundException → 404
     @ExceptionHandler(EmployeeNotFoundException.class)
     public ResponseEntity<Map<String, Object>> handleEmployeeNotFound(EmployeeNotFoundException ex){
         return buildErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
