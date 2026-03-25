@@ -16,6 +16,12 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, Object>> handleEmployeeNotFound(EmployeeNotFoundException ex){
         return buildErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
     }
+    // Handles duplicate email etc → 400
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Map<String, Object>> handleIllegalArgument(
+            IllegalArgumentException ex) {
+        return buildErrorResponse(HttpStatus.BAD_REQUEST, ex.getMessage());
+    }
 
     private ResponseEntity<Map<String, Object>> buildErrorResponse(
             HttpStatus status, String message) {
