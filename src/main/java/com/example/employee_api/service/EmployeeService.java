@@ -3,6 +3,7 @@ package com.example.employee_api.service;
 import com.example.employee_api.dto.EmployeeRequestDto;
 import com.example.employee_api.dto.EmployeeResponseDto;
 import com.example.employee_api.entity.Employee;
+import com.example.employee_api.exception.EmployeeNotFoundException;
 import com.example.employee_api.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -47,6 +48,12 @@ public class EmployeeService {
                 .stream()
                 .map(this::toResponseDto)
                 .collect(Collectors.toList());
+    }
+
+    public EmployeeResponseDto getEmployeeById(Long id){
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(()-> new EmployeeNotFoundException(id));
+        return toResponseDto(employee);
     }
 
 
