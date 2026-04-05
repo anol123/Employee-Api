@@ -12,8 +12,8 @@ import java.util.List;
 @RequestMapping("/employee")
 public class EmployeeController {
     private EmployeeService employeeService;
-    // @RequestMapping("/employee-list")
-    // public ResponseEntity<List<EmployeeResponseDto>> getAllEmployees(){
-    //     return ResponseEntity.ok(employeeService.getAllEmployees());
-    // }
+    @RequestMapping("/employee-list")
+    public ResponseEntity<List<EmployeeResponseDto>> getAllEmployees(){
+        return ResponseEntity.ok(employeeService.getAllEmployees());
+    }
 }
