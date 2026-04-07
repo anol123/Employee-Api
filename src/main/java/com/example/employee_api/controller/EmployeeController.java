@@ -1,11 +1,12 @@
 package com.example.employee_api.controller;
 
+import com.example.employee_api.dto.EmployeeRequestDto;
 import com.example.employee_api.dto.EmployeeResponseDto;
 import com.example.employee_api.service.EmployeeService;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,12 +15,16 @@ import java.util.List;
 public class EmployeeController {
     private EmployeeService employeeService;
 
+    @PostMapping
+    @RequestMapping("/create-employee")
+    public ResponseEntity<EmployeeResponseDto> createEmployee(@Valid @RequestBody EmployeeRequestDto requestDto){
+        return ResponseEntity.status(HttpStatus.CREATED).body(employeeService.createEmployee(requestDto));
+    }
+
     @GetMapping
     @RequestMapping("/employee-list")
     public ResponseEntity<List<EmployeeResponseDto>> getAllEmployees(){
         return ResponseEntity.ok(employeeService.getAllEmployees());
     }
-
-
 
 }
