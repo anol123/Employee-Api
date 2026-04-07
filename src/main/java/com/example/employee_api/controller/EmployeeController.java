@@ -15,20 +15,25 @@ import java.util.List;
 public class EmployeeController {
     private EmployeeService employeeService;
 
-    @PostMapping
-    @RequestMapping("/create-employee")
+    @GetMapping("/hello")
+    public ResponseEntity<String> hello(){
+        return ResponseEntity.status(HttpStatus.OK).body("Hello World");
+    }
+
+    @PostMapping("/create-employee")
+//    @RequestMapping("/create-employee")
     public ResponseEntity<EmployeeResponseDto> createEmployee(@Valid @RequestBody EmployeeRequestDto requestDto){
         return ResponseEntity.status(HttpStatus.CREATED).body(employeeService.createEmployee(requestDto));
     }
 
-    @GetMapping
-    @RequestMapping("/employee-list")
+    @GetMapping("/employee-list")
+//    @RequestMapping("/employee-list")
     public ResponseEntity<List<EmployeeResponseDto>> getAllEmployees(){
         return ResponseEntity.ok(employeeService.getAllEmployees());
     }
 
-    @GetMapping
-    @RequestMapping("/{id}")
+    @GetMapping("/{id}")
+//    @RequestMapping("/{id}")
     public ResponseEntity<EmployeeResponseDto> getEmployeeById(@PathVariable Long id){
         return ResponseEntity.status(HttpStatus.OK).body(employeeService.getEmployeeById(id));
     }
