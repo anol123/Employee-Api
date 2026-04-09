@@ -26,16 +26,16 @@ public class EmployeeController {
         return ResponseEntity.status(HttpStatus.CREATED).body(employeeService.createEmployee(requestDto));
     }
 
-//    @GetMapping("/employee-list")
-////    @RequestMapping("/employee-list")
-//    public ResponseEntity<List<EmployeeResponseDto>> getAllEmployees(){
-//        return ResponseEntity.ok(employeeService.getAllEmployees());
-//    }
-//
-//    @GetMapping("/{id}")
-////    @RequestMapping("/{id}")
-//    public ResponseEntity<EmployeeResponseDto> getEmployeeById(@PathVariable Long id){
-//        return ResponseEntity.status(HttpStatus.OK).body(employeeService.getEmployeeById(id));
-//    }
+    @GetMapping("/employee-list")
+//    @RequestMapping("/employee-list")
+    public ResponseEntity<List<EmployeeResponseDto>> getAllEmployees(){
+        return ResponseEntity.ok(employeeService.getAllEmployees());
+    }
+
+    @GetMapping("/{id}")
+//    @RequestMapping("/{id}")
+    public ResponseEntity<EmployeeResponseDto> getEmployeeById(@PathVariable Long id){
+        return ResponseEntity.status(HttpStatus.OK).body(employeeService.getEmployeeById(id));
+    }
 
 }
