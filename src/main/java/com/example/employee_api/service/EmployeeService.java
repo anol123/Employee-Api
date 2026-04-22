@@ -61,8 +61,8 @@ public class EmployeeService {
     }
 
 
-    public String deleteById(Long id) {
-        employeeRepository.deleteById(id);
-        return "Deleted employee: "+ id;
-    }
+//    public String deleteById(Long id) {
+//        employeeRepository.deleteById(id);
+//        return "Deleted employee: "+ id;
+//    }
 }
