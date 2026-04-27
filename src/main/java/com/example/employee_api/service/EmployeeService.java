@@ -47,12 +47,12 @@ public class EmployeeService {
         return toResponseDto(saved);
     }
 
-//    public List<EmployeeResponseDto> getAllEmployees(){
-//        return employeeRepository.findAll()
-//                .stream()
-//                .map(this::toResponseDto)
-//                .collect(Collectors.toList());
-//    }
+    public List<EmployeeResponseDto> getAllEmployees(){
+        return employeeRepository.findAll()
+                .stream()
+                .map(this::toResponseDto)
+                .collect(Collectors.toList());
+    }
 
     public EmployeeResponseDto getEmployeeById(Long id){
         Employee employee = employeeRepository.findById(id)
