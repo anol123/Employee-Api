@@ -54,11 +54,11 @@ public class EmployeeService {
                 .collect(Collectors.toList());
     }
 
-//    public EmployeeResponseDto getEmployeeById(Long id){
-//        Employee employee = employeeRepository.findById(id)
-//                .orElseThrow(()-> new EmployeeNotFoundException(id));
-//        return toResponseDto(employee);
-//    }
+    public EmployeeResponseDto getEmployeeById(Long id){
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(()-> new EmployeeNotFoundException(id));
+        return toResponseDto(employee);
+    }
 
 
     public String deleteById(Long id) {
