@@ -4,6 +4,7 @@ import com.example.employee_api.dto.EmployeeRequestDto;
 import com.example.employee_api.dto.EmployeeResponseDto;
 import com.example.employee_api.service.EmployeeService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,15 @@ import java.util.List;
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
-    private EmployeeService employeeService;
+//    @Autowired
+//    private EmployeeService employeeService;
+
+    private final EmployeeService employeeService;
+
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
+
 
     @GetMapping("/hello")
     public ResponseEntity<String> hello(){
