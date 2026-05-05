@@ -24,10 +24,10 @@ public class EmployeeController {
     }
 
 
-    @GetMapping("/hello")
-    public ResponseEntity<String> hello(){
-        return ResponseEntity.status(HttpStatus.OK).body("Hello World");
-    }
+//    @GetMapping("/hello")
+//    public ResponseEntity<String> hello(){
+//        return ResponseEntity.status(HttpStatus.OK).body("Hello World");
+//    }
 
     @PostMapping("/create-employee")
 //    @RequestMapping("/create-employee")
