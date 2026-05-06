@@ -29,11 +29,11 @@ public class EmployeeController {
         return ResponseEntity.status(HttpStatus.OK).body("Hello World");
     }
 
-//    @PostMapping("/create-employee")
-////    @RequestMapping("/create-employee")
-//    public ResponseEntity<EmployeeResponseDto> createEmployee(@Valid @RequestBody EmployeeRequestDto requestDto){
-//        return ResponseEntity.status(HttpStatus.CREATED).body(employeeService.createEmployee(requestDto));
-//    }
+    @PostMapping("/create-employee")
+//    @RequestMapping("/create-employee")
+    public ResponseEntity<EmployeeResponseDto> createEmployee(@Valid @RequestBody EmployeeRequestDto requestDto){
+        return ResponseEntity.status(HttpStatus.CREATED).body(employeeService.createEmployee(requestDto));
+    }
 
     @GetMapping("/employee-list")
 //    @RequestMapping("/employee-list")
