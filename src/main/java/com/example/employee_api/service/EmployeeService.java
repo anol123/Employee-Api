@@ -65,4 +65,14 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
         return "Deleted employee: "+ id;
     }
+
+    public EmployeeResponseDto updateEmployee(Long id, EmployeeRequestDto requestDto) {
+        Employee employee = employeeRepository.findById(id).orElseThrow(()->new EmployeeNotFoundException(id));
+        employee.setName(requestDto.getName());
+        employee.setDepartment(requestDto.getDepartment());
+        employee.setEmail(requestDto.getEmail());
+        employee.setSalary(requestDto.getSalary());
+
+        return toResponseDto(employee);
+    }
 }
