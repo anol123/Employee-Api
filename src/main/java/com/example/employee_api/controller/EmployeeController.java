@@ -53,11 +53,11 @@ public class EmployeeController {
         return ResponseEntity.status(HttpStatus.OK).body(employeeService.deleteById(id));
     }
 
-//    @PutMapping("/{id}")
+    @PutMapping("/{id}")
 
-//    public ResponseEntity<EmployeeResponseDto> updateEmployee(@PathVariable Long id, @RequestBody EmployeeRequestDto requestDto){
-//        return ResponseEntity.status(HttpStatus.OK).body(employeeService.updateEmployee(id,requestDto));
-//    }
+    public ResponseEntity<EmployeeResponseDto> updateEmployee(@PathVariable Long id, @RequestBody EmployeeRequestDto requestDto){
+        return ResponseEntity.status(HttpStatus.OK).body(employeeService.updateEmployee(id,requestDto));
+    }
 
 
 }
