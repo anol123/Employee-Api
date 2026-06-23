@@ -12,10 +12,10 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     // Handles your custom NotFoundException → 404
-    @ExceptionHandler(EmployeeNotFoundException.class)
-    public ResponseEntity<Map<String, Object>> handleEmployeeNotFound(EmployeeNotFoundException ex){
-        return buildErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
-    }
+//    @ExceptionHandler(EmployeeNotFoundException.class)
+//    public ResponseEntity<Map<String, Object>> handleEmployeeNotFound(EmployeeNotFoundException ex){
+//        return buildErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
+//    }
     // Handles duplicate email etc → 400
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Map<String, Object>> handleIllegalArgument(
