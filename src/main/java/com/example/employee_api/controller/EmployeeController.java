@@ -30,13 +30,13 @@ public class EmployeeController {
     }
 
 //    @PostMapping("/create-employee")
-//////    @RequestMapping("/create-employee")
-////    public ResponseEntity<EmployeeResponseDto> createEmployee(@Valid @RequestBody EmployeeRequestDto requestDto){
-////        return ResponseEntity.status(HttpStatus.CREATED).body(employeeService.createEmployee(requestDto));
-////    }
+//   // @RequestMapping("/create-employee")
+//    public ResponseEntity<EmployeeResponseDto> createEmployee(@Valid @RequestBody EmployeeRequestDto requestDto){
+//        return ResponseEntity.status(HttpStatus.CREATED).body(employeeService.createEmployee(requestDto));
+//    }
 
     @GetMapping("/employee-list")
-    @RequestMapping("/employee-list")
+    //@RequestMapping("/employee-list")
     public ResponseEntity<List<EmployeeResponseDto>> getAllEmployees(){
         return ResponseEntity.ok(employeeService.getAllEmployees());
     }
