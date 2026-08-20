@@ -41,11 +41,11 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeService.getAllEmployees());
     }
 
-//    @GetMapping("/{id}")
-////    @RequestMapping("/{id}")
-//    public ResponseEntity<EmployeeResponseDto> getEmployeeById(@PathVariable Long id){
-//        return ResponseEntity.status(HttpStatus.OK).body(employeeService.getEmployeeById(id));
-//    }
+    @GetMapping("/{id}")
+//    @RequestMapping("/{id}")
+    public ResponseEntity<EmployeeResponseDto> getEmployeeById(@PathVariable Long id){
+        return ResponseEntity.status(HttpStatus.OK).body(employeeService.getEmployeeById(id));
+    }
 
     @DeleteMapping("/{id}")
 
